@@ -1,18 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { StoreService } from '../store.service';
+import { StoreService } from '../services/store.service';
+import { AlbumService } from '../services/album.service';
+// import { Album } from '../album.model';
 
 @Component({
   selector: 'app-edit-store',
   templateUrl: './edit-store.component.html',
   styleUrls: ['./edit-store.component.css'],
-  providers: [StoreService]
+  providers: [StoreService, AlbumService]
 })
 
 export class EditStoreComponent implements OnInit {
   @Input() selectedStore;
-
-  constructor(private storeService: StoreService) { }
-
+  // @Input() albumsList;
+  constructor(private storeService: StoreService, private albumService: AlbumService) { }
   ngOnInit() {
   }
 

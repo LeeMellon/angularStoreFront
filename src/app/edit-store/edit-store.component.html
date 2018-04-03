@@ -8,9 +8,12 @@
 <input [(ngModel)]="selectedStore.locale">
 <br>
 
-<label>New Store Inventory:</label>
-<input [(ngModel)]="selectedStore.inventory">
+<label>Store Inventory:</label>
+<ul *ngFor="let album of selectedStore.inventory">
+  <li>{{album.title}}</li>
+</ul>
 <br>
+
 
 <button (click)="updateStore(selectedStore)">Update</button>
 <hr>

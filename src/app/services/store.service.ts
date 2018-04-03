@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { Store } from './store.model';
-import { Album } from './album.model';
+import { Store } from '../models/store.model';
+import { Album } from '../models/album.model';
 
 
 @Injectable()
@@ -25,9 +25,9 @@ export class StoreService {
     return this.database.object('stores/' + storeId);
   }
 
-  addInventory(storeToStock: Store, newAlbum: Album) {
-    storeToStock.inventory.push(newAlbum);
-  }
+  // addInventory(storeToStock: Store, newAlbum: Album) {
+  //   storeToStock.inventory.push(newAlbum);
+  // }
 
   updateStore(localUpdatedStore){
     var storeEntryInFirebase = this.getStoreById(localUpdatedStore.$key);
@@ -40,5 +40,15 @@ export class StoreService {
   deleteStore(localStoreToDelete){
     var storeEntryInFirebase = this.getStoreById(localStoreToDelete.$key);
     storeEntryInFirebase.remove();
+  }
+
+  addOne(store: Store, album: Album){
+    if(store.inventory.has(album)){
+      let currentQuantity = store.inventory[1].get(album);
+      let newQuantity = currentQuantity + 1;
+      store.inventory.set(album,newQuantity);
+    } else {
+      store.inventory.set(album, 1);
+    }
   }
 }

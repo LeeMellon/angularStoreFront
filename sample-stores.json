@@ -14,16 +14,16 @@
     "name": "Ameoba Records",
     "locale": "San Francisco",
     "estDate": "11-9-1997",
-    "inventory": [{"title": " Piper At The Gates of Dawn",
+    "inventory": [[{"title": " Piper At The Gates of Dawn",
     "artist": "Pink Floyd",
     "description": "A live  album by the English progressive rock band originally released in 1995, on the label EMI in the United Kingdom.",
-    "id": "1"},
-    {
+    "id": "1"}, 1],
+    [{
     "title": "Axis Bold As Love",
     "artist": "Jimi Hendrix",
     "description": "Second studio album by the English-American band, released in 1967.",
     "id": "3"
-      }],
+      }, 3]],
     "id": "3"
     }],
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '../store.model';
+import { Store } from '../models/store.model';
+// import { Album } from '../album.model';
 import { Router } from '@angular/router';
-import { StoreService } from '../store.service';
+import { StoreService } from '../services/store.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 

@@ -3,7 +3,9 @@
   <h4>{{storeToDisplay?.locale}}</h4>
   <p>{{storeToDisplay?.estDate}}</p>
   <div *ngFor="let album of storeToDisplay?.inventory" class="card">
-  <h2>{{album.title}}</h2>
-  <h3>{{album.artist}}</h3>
+  <h5>{{album[0].artist}}</h5>
+  <h5>{{album[0].title}}</h5>
+  <!-- <h5>Quantity: {{album[1]}}</h5> -->
+<button (click)="addOne(storeToDisplay, album)">AddOne</button> <h5>Quantity: {{album[1]}}</h5> <button (click)="minusOne(storeToDisplay, album)">MinusOne</button>
 </div>
 </div>

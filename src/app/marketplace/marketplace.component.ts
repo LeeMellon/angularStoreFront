@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Album } from '../album.model';
+import { Album } from '../models/album.model';
 import { Router } from '@angular/router';
-import { AlbumService } from '../album.service';
+import { AlbumService } from '../services/album.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 

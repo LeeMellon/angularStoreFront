@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AlbumService } from '../album.service';
-import { Album } from '../album.model';
-import { Store } from '../store.model';
-import { StoreService } from '../store.service';
+import { AlbumService } from '../services/album.service';
+import { Album } from '../models/album.model';
+import { Store } from '../models/store.model';
+import { StoreService } from '../services/store.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
