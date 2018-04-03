@@ -5,6 +5,8 @@ import { AboutComponent }   from './about/about.component';
 import { MarketplaceComponent} from  './marketplace/marketplace.component';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
 import { AdminComponent }   from './admin/admin.component';
+import { DirectoryComponent } from './directory/directory.component';
+import { StoreDetailComponent} from './store-detail/store-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +28,14 @@ const appRoutes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'directory',
+    component: DirectoryComponent
+  },
+  {
+    path: 'stores/:id',
+    component: StoreDetailComponent
   }
 ];
 

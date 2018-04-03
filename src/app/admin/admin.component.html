@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="col-md-6">
 <div class="card">
   <div class="card-header">
     <h3 class="card-title">Add New Album to Inventory</h3>
@@ -24,6 +26,38 @@
       <button (click)="submitForm(newTitle.value, newArtist.value, newDescription.value); newTitle.value=''; newArtist.value=''; newDescription.value=''">Add</button>
     </div>
   </div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Add New Store to Inventory</h3>
+  </div>
+  <div class="card-body">
+    <div>
+      <div>
+        <label>Store Name:</label>
+        <br>
+        <input #newName>
+      </div>
+
+      <div>
+        <label>Store Locale:</label>
+        <br>
+        <input #newLocale>
+      </div>
+
+      <div>
+        <label>Store EstDate:</label>
+        <br>
+        <input #newEstDate>
+      </div>
+      <button (click)="submitStoreForm(newName.value, newLocale.value, newEstDate.value); newName.value=''; newLocale.value=''; newEstDate.value=''">Add</button>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 
 <div>

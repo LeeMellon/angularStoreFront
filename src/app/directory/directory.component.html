@@ -1,0 +1,12 @@
+<h2>Store Directory</h2>
+
+<div *ngFor="let store of stores | async"  class="card">
+  <div class="card-body">
+    <h3 (click)="goToDetailPage(store)"><em>{{store.name}}</em> by {{store.locale}}</h3>
+    <div *ngIf="currentRoute === '/admin'">
+      {{store.inventory}}
+      <hr>
+      <app-edit-store [selectedStore]="store"></app-edit-store>
+    </div>
+  </div>
+</div>

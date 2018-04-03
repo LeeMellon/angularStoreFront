@@ -1,0 +1,17 @@
+<h4>Edit Store</h4>
+
+<label>New Store Name:</label>
+<input [(ngModel)]="selectedStore.name">
+<br>
+
+<label>New Store Locale:</label>
+<input [(ngModel)]="selectedStore.locale">
+<br>
+
+<label>New Store Inventory:</label>
+<input [(ngModel)]="selectedStore.inventory">
+<br>
+
+<button (click)="updateStore(selectedStore)">Update</button>
+<hr>
+<button (click)="deleteStore(selectedStore)">Delete</button>

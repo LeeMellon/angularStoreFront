@@ -14,6 +14,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AdminComponent } from './admin/admin.component';
 import { EditAlbumComponent } from './edit-album/edit-album.component';
+import { DirectoryComponent } from './directory/directory.component';
+import { EditStoreComponent } from './edit-store/edit-store.component';
+import { StoreDetailComponent } from './store-detail/store-detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,7 +34,10 @@ export const firebaseConfig = {
     MarketplaceComponent,
     AlbumDetailComponent,
     AdminComponent,
-    EditAlbumComponent
+    EditAlbumComponent,
+    DirectoryComponent,
+    EditStoreComponent,
+    StoreDetailComponent
   ],
   imports: [
     BrowserModule,
