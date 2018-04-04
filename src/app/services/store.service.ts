@@ -25,15 +25,12 @@ export class StoreService {
     return this.database.object('stores/' + storeId);
   }
 
-  // addInventory(storeToStock: Store, newAlbum: Album) {
-  //   storeToStock.inventory.push(newAlbum);
-  // }
-
   updateStore(localUpdatedStore){
     var storeEntryInFirebase = this.getStoreById(localUpdatedStore.$key);
     storeEntryInFirebase.update({name: localUpdatedStore.name,
                                 locale: localUpdatedStore.locale,
-                                estDate: localUpdatedStore.estDate
+                                estDate: localUpdatedStore.estDate,
+                                inventory: localUpdatedStore.inventory
                                 });
   }
 
@@ -42,13 +39,21 @@ export class StoreService {
     storeEntryInFirebase.remove();
   }
 
-  addOne(store: Store, album: Album){
-    if(store.inventory.has(album)){
-      let currentQuantity = store.inventory[1].get(album);
-      let newQuantity = currentQuantity + 1;
-      store.inventory.set(album,newQuantity);
-    } else {
-      store.inventory.set(album, 1);
+  inventoryList(store: Store, albumsList: any[]){
+    let newInventory = new Map([]);
+    var currentInventory = store.inventory
+    console.log(currentInventory.size)
+    for(let x = 0; x < albumsList.length; x++ ){
+      for(let y = 0; y < currentInventory.size; y++){
+        if(albumsList[x].id !== store.inventory[y].id){
+          let thisAlbum = store.inventory[y][0]
+          newInventory.set([thisAlbum], 0)
+        }
+      }
     }
+    console.log(newInventory)
+    return store.inventory
   }
+
+
 }

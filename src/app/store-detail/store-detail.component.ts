@@ -16,7 +16,7 @@ export class StoreDetailComponent implements OnInit {
   storeId: string;
   storeToDisplay;
   storeInventoryList;
-  albumsList;
+  albumsList: Album[];
 
   constructor(private route: ActivatedRoute, private location: Location, private storeService: StoreService, private albumService: AlbumService) { }
 
@@ -28,14 +28,30 @@ export class StoreDetailComponent implements OnInit {
     this.storeService.getStoreById(this.storeId).subscribe
     (store => {
       this.storeToDisplay = store;
-      console.log(this.storeToDisplay);
+      // console.log(this.storeToDisplay);
 
     })
 
-    // this.albumsList = this.albumService.getAlbums()
-    // this.albumsList.subscribe(albums =>{
-    //   albums.forEach((album)=>{
-    //     if()
+    this.albumService.getAlbums().subscribe(albums =>{
+      this.albumsList = albums;
+      this.storeInventoryList = this.storeService.inventoryList(this.storeToDisplay, this.albumsList)
+      // console.log(this.storeInventoryList)
+    })
+
+
   }
 
+
+
+  update(store){
+    this.storeService.updateStore(store)
+  }
+
+  minusOne(albums){
+      albums[1]-=1;
+  }
+
+  addOne(albums){
+    albums[1]+=1;
+  }
 }
